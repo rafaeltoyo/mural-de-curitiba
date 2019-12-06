@@ -16,6 +16,15 @@ import Icon from 'react-native-vector-icons/Ionicons'
 const { width  : WIDTH } = Dimensions.get('window')
 const { height  : HEIGHT } = Dimensions.get('window')
 
+/**
+ * @todo Desabilitado temporariamente para teste
+ */
+
+import App from './src';
+
+export default function Root() { return (<App></App>); };
+
+ /*
 export default function App() {
   return (
     <ImageBackground source = {bgImage} style={styles.backgroundContainer}>
@@ -135,3 +144,4 @@ const styles = StyleSheet.create({
     left: 40
   }
 });
+*/
