@@ -13,13 +13,22 @@ import { styles } from "./styles.js";
 import LocationService from '../../../services/location';
 
 export default function LocationPost({ location }) {
-    location = LocationService.search(location);
+    this.bairro = '';
+    this.endereco = '';
+    this.descricao = '';
+    this.image = null;
+    
+    this.load = (location) => {
+        location = LocationService.search(location);
+    
+        this.bairro = location ? location.bairro : '';
+        this.endereco = location ? location.endereco : '';
+        this.descricao = location ? location.descricao : '';
+    
+        this.image = location ? location.img : require('../../../../assets/logo.jpg');
+    };
 
-    this.bairro = location ? location.bairro : '';
-    this.endereco = location ? location.endereco : '';
-    this.descricao = location ? location.descricao : '';
-
-    this.image = location ? location.img : require('../../../../assets/logo.jpg');
+    this.load(location);
 
     return (
         <View style={{ flex: 1 }}>

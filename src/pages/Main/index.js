@@ -10,6 +10,7 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import LocationPreview from '../../components/Location/Preview';
+import LocationList from '../../components/Location/List';
 import StatusBar from '../../components/StatusBar';
 import { styles } from "./styles.js";
 
@@ -31,11 +32,10 @@ export default class MainScreen extends React.Component {
         return (
             <View style={styles.backgroundContainer}>
                 <ScrollView vertical>
-                    <TouchableOpacity onPress={this.details} style={{flex: 1, alignContent: 'center'}}>
-                        <View style={styles.backgroundContainer}>
-                        <LocationPreview location={this.locationId} />
-                        </View>
+                    <TouchableOpacity onPress={this.details} style={{alignItems: 'center'}}>
+                        <LocationPreview key={this.locationId} location={this.locationId} />
                     </TouchableOpacity>
+
 
                     <View style={styles.moreItems}>
                         <ScrollView horizontal>
@@ -53,6 +53,9 @@ export default class MainScreen extends React.Component {
                             </View>
                         </ScrollView>
                     </View>
+
+                    <LocationList onPressItem={(id) => this.locationId = id} />
+
                     {/* Use this footer for the details page if you don't want to do it again  */}
                 </ScrollView>
                 <StatusBar />
