@@ -3,13 +3,17 @@ import { Dimensions, StyleSheet } from 'react-native';
 const { width  : WIDTH, height  : HEIGHT } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
+    location_root: {
+        flexDirection: 'column',
+        alignContent: 'center',
+        justifyContent: 'center',
+    },
     location_banner: {
-        width: 320,
-        height: 320,
+        width: WIDTH,
+        height: 300,
         flexDirection: 'row',
         alignItems: "center",
         margin: 0,
-        borderRadius: 30,
         overflow: "hidden",
         shadowColor: "rgba(0, 0, 0, .7)",
         shadowOffset: { height: 5, width: 0 },
@@ -17,7 +21,7 @@ export const styles = StyleSheet.create({
         shadowRadius: 4,    
     },
     location_banner_image: {
-        flex: 1,
+        width: WIDTH,
         margin: 0,
     },
     location_info: {
@@ -41,5 +45,14 @@ export const styles = StyleSheet.create({
         textAlign: 'right',
         marginLeft: 10,
         marginRight: 10,
+    },
+    location_description: {
+        color: 'gray',
+        fontSize: 15,
+        fontWeight: '200',
+        padding: 0,
+        margin: 10,
+        opacity: 0.8,
+        textAlign: "justify"
     },
 });

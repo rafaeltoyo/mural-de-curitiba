@@ -35,7 +35,6 @@ const MainNavigator = createStackNavigator({
             fontWeight: 'bold',
         },*/
     },
-    navigationOptions: {},
 });
 
 AuthNavigator = createSwitchNavigator({

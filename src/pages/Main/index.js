@@ -7,119 +7,55 @@ import {
     Platform,
     ScrollView
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import Icon from 'react-native-vector-icons/Ionicons';
 
+import LocationPreview from '../../components/Location/Preview';
+import StatusBar from '../../components/StatusBar';
 import { styles } from "./styles.js";
 
-import bgImage from "../../../assets/background-login.jpeg";
-import c_image from "../../../assets/Centro_Curitiba.jpg";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default class MainScreen extends React.Component {
+
+    locationId = 2;
 
     static navigationOptions = ({ navigation }) => {
         return {}
     };
 
+    details = () => {
+        this.props.navigation.navigate("Details", { locationId: this.locationId });
+    };
+
     render() {
         return (
             <View style={styles.backgroundContainer}>
-                
-                <View style={styles.imageContainer}>
-                    <Image source={c_image} style={styles.imageStyle} />
-                </View>
-                <View style={styles.itemDescription}>
-                    <Ionicons
-                        name={Platform.OS === "ios" ? "ios-pin" : "pin"}
-                        size={50}
-                        color="black"
-                    />
-                    <View style={{ paddingRight: 10 }}>
-                        <Text style={{ fontSize: 30, textAlign: "right" }}>Centro</Text>
-                        <Text style={{ fontSize: 15, textAlign: "right" }}>Av. Sete de Setembro, 1353</Text>
-                    </View>
-                </View>
-                <View style={styles.moreItems}>
-                    <ScrollView horizontal>
-                        {/* Inside the next view theres a bunch of random shit just to test the scrollview */}
-                        <View style={{ flexDirection: "row" }}>
-                            <Ionicons
-                                style={{ paddingRight: 10 }}
-                                name={Platform.OS === "ios" ? "ios-image" : "img"}
-                                size={100}
-                                color="grey"
-                            />
-
-                            <Ionicons
-                                style={{ paddingRight: 10 }}
-                                name={Platform.OS === "ios" ? "ios-image" : "img"}
-                                size={100}
-                                color="grey"
-                            />
-
-                            <Ionicons
-                                style={{ paddingRight: 10 }}
-                                name={Platform.OS === "ios" ? "ios-image" : "img"}
-                                size={100}
-                                color="grey"
-                            />
-
-                            <Ionicons
-                                style={{ paddingRight: 10 }}
-                                name={Platform.OS === "ios" ? "ios-image" : "img"}
-                                size={100}
-                                color="grey"
-                            />
-
-                            <Ionicons
-                                style={{ paddingRight: 10 }}
-                                name={Platform.OS === "ios" ? "ios-image" : "img"}
-                                size={100}
-                                color="grey"
-                            />
-
-                            <Ionicons
-                                style={{ paddingRight: 10 }}
-                                name={Platform.OS === "ios" ? "ios-image" : "img"}
-                                size={100}
-                                color="grey"
-                            />
-
-                            <Ionicons
-                                style={{ paddingRight: 10 }}
-                                name={Platform.OS === "ios" ? "ios-image" : "img"}
-                                size={100}
-                                color="grey"
-                            />
+                <ScrollView vertical>
+                    <TouchableOpacity onPress={this.details} style={{flex: 1, alignContent: 'center'}}>
+                        <View style={styles.backgroundContainer}>
+                        <LocationPreview location={this.locationId} />
                         </View>
-                    </ScrollView>
-                </View>
-                {/* Use this footer for the details page if you don't want to do it again  */}
-                <View style={styles.footer}>
-                    <Ionicons
-                        name={Platform.OS === "ios" ? "ios-contact" : "user"}
-                        size={50}
-                        color="black"
-                    />
-                    <View style={{ paddingLeft: 10 }}>
-                        <Text>Aluno</Text>
-                        <Text style={{ fontWeight: 'bold' }}>UTFPR</Text>
+                    </TouchableOpacity>
+
+                    <View style={styles.moreItems}>
+                        <ScrollView horizontal>
+                            {/* Inside the next view theres a bunch of random shit just to test the scrollview */}
+                            <View style={{ flexDirection: "row" }}>
+                                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
+                                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
+                                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
+                                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
+                                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
+                                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
+                                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
+                                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
+                                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
+                            </View>
+                        </ScrollView>
                     </View>
-                    <Ionicons style={{ paddingLeft: 100 }}
-                        name={Platform.OS === "ios" ? "ios-share" : "share"}
-                        size={50}
-                        color="black"
-                    />
-                    <Ionicons style={{ paddingLeft: 20 }}
-                        name={Platform.OS === "ios" ? "ios-heart-empty" : "like"}
-                        size={50}
-                        color="black"
-                    />
-                    <Ionicons style={{ paddingLeft: 20 }}
-                        name={Platform.OS === "ios" ? "ios-add-circle" : "add"}
-                        size={50}
-                        color="black"
-                    />
-                </View>
+                    {/* Use this footer for the details page if you don't want to do it again  */}
+                </ScrollView>
+                <StatusBar />
             </View>
         );
     }
