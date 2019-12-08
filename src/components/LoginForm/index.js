@@ -11,7 +11,8 @@ export default function LoginForm() {
 
     this.submit = () => {
         // TODO: https://docs.expo.io/versions/latest/react-native/navigation/
-        console.log('teste');
+        //console.log('teste');
+        //this.props.navigation.navigate("Main");
     };
 
     return (
