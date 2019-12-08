@@ -5,14 +5,13 @@ const { width  : WIDTH, height  : HEIGHT } = Dimensions.get('window');
 export const styles = StyleSheet.create({
     location_root: {
         flexDirection: 'column',
-        alignContent: 'center',
-        justifyContent: 'center',
+        alignItems: 'center',
     },
     location_banner: {
         width: WIDTH,
         height: 300,
-        flexDirection: 'row',
         alignItems: "center",
+        justifyContent: 'center',
         margin: 0,
         overflow: "hidden",
         shadowColor: "rgba(0, 0, 0, .7)",
@@ -21,7 +20,6 @@ export const styles = StyleSheet.create({
         shadowRadius: 4,    
     },
     location_banner_image: {
-        width: WIDTH,
         margin: 0,
     },
     location_info: {

@@ -18,7 +18,6 @@ export default class DetailsScreen extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.locationId = this.props.navigation.getParam('locationId', '0');
     }
 

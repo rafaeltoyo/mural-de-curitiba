@@ -7,7 +7,7 @@ export default class LocationService {
     }
 
     static list() {
-        let list = LocationService.load();
+        const list = LocationService.load();
 
         list.forEach(location => {
             location.img = LocationService.getImg(location.img);
@@ -17,20 +17,19 @@ export default class LocationService {
     }
 
     static search(id) {
-        let list = LocationService.load();
+        const list = LocationService.load();
         
-        let location = id >= 0 && list.length > id ? list[id] : null;
+        const location = id >= 0 && list.length > id ? list[id] : null;
 
-        if (location) {
-            location.img = LocationService.getImg(location.img);
-        }
+        location.img = LocationService.getImg(location.img);
 
         return location;
     }
 
     static getImg(id) {
-        if (id == 1) return require('../../../assets/utfpr.jpg');
-        if (id == 2) return require('../../../assets/Centro_Curitiba.jpg');
-        return null;
+        if (id == 1 || id == '1') return require('../../../assets/utfpr.jpg');
+        if (id == 2 || id == '2') return require('../../../assets/Centro_Curitiba.jpg');
+        if (id == 3 || id == '3') return require('../../../assets/logo.jpg');
+        return require('../../../assets/icon.png');
     }
 }
