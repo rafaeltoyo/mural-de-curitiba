@@ -1,8 +1,14 @@
-export default class ServiceLogin {
-    login(username, password) {
+
+export default class LoginService {
+    static login(username, password) {
         let users = {users: []};
 
-        users = require("login.json");
+        users = require("./login.json");
+
+        if (username == null || username == "")
+            throw Error("Usuário vazio");
+        if (password == null || password == "")
+            throw Error("Senha vazia");
 
         let user = {
             username: "",

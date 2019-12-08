@@ -1,18 +1,30 @@
 import React from 'react';
 import { Text, TextInput, View, TouchableOpacity } from 'react-native';
 
-import Icon from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/Ionicons';
 
-import { styles } from './styles.js'
+import { styles } from './styles.js';
+import LoginService from '../../services/login/loginservice';
 
-export default function LoginForm() {
+export default function LoginForm({resolver, reject}) {
     this.username = null;
     this.password = null;
 
+    this.__resolver = resolver;
+    this.__reject = reject;
+
     this.submit = () => {
-        // TODO: https://docs.expo.io/versions/latest/react-native/navigation/
-        //console.log('teste');
-        //this.props.navigation.navigate("Main");
+        let user = null;
+        try {
+            user = LoginService.login(username, password);
+
+            if (user == null)
+                this.__reject("Login inválido!");
+            else
+                this.__resolver(user);
+        } catch (err) {
+            this.__reject(err.message);
+        }
     };
 
     return (

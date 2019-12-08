@@ -3,6 +3,7 @@
         {
             "username": "admin",
             "password": "admin",
+            "name": "Admin",
             "profileImg": null,
             "roles": [
                 "admin",
@@ -12,6 +13,7 @@
         {
             "username": "user",
             "password": "user",
+            "name": "Usuário",
             "profileImg": null,
             "roles": [
                 "user"
