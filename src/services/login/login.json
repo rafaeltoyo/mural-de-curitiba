@@ -1,7 +1,7 @@
 {
     "users": [
         {
-            "username": "admin",
+            "username": "Admin",
             "password": "admin",
             "name": "Admin",
             "profileImg": null,
@@ -11,9 +11,18 @@
             ]
         },
         {
-            "username": "user",
+            "username": "User",
             "password": "user",
             "name": "Usuário",
+            "profileImg": null,
+            "roles": [
+                "user"
+            ]
+        },
+        {
+            "username": "Aluno",
+            "password": "aluno",
+            "name": "Aluno",
             "profileImg": null,
             "roles": [
                 "user"

@@ -15,19 +15,15 @@ import bgImage from "../../../assets/background-login.jpeg";
 import c_image from "../../../assets/Centro_Curitiba.jpg";
 
 export default class MainScreen extends React.Component {
+
+    static navigationOptions = ({ navigation }) => {
+        return {}
+    };
+
     render() {
         return (
-            <ImageBackground source={bgImage} style={styles.backgroundContainer}>
-                <View style={styles.userHeader}>
-                    <Text style={{ width: 280, fontSize: 18, fontWeight: "bold" }}>
-                        MEU MURAL
-          </Text>
-                    <Ionicons
-                        name={Platform.OS === "ios" ? "ios-contact" : "user"}
-                        size={50}
-                        color="black"
-                    />
-                </View>
+            <View style={styles.backgroundContainer}>
+                
                 <View style={styles.imageContainer}>
                     <Image source={c_image} style={styles.imageStyle} />
                 </View>
@@ -39,9 +35,7 @@ export default class MainScreen extends React.Component {
                     />
                     <View style={{ paddingRight: 10 }}>
                         <Text style={{ fontSize: 30, textAlign: "right" }}>Centro</Text>
-                        <Text style={{ fontSize: 15, textAlign: "right" }}>
-                            Av. Sete de Setembro, 1353
-            </Text>
+                        <Text style={{ fontSize: 15, textAlign: "right" }}>Av. Sete de Setembro, 1353</Text>
                     </View>
                 </View>
                 <View style={styles.moreItems}>
@@ -126,7 +120,7 @@ export default class MainScreen extends React.Component {
                         color="black"
                     />
                 </View>
-            </ImageBackground>
+            </View>
         );
     }
 }

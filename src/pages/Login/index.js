@@ -11,8 +11,8 @@ import logo from '../../../assets/logo.jpg';
 
 export default class LoginScreen extends React.Component {
 
-    static navigationOptions = {
-        title: 'Welcome'
+    static navigationOptions = ({ navigation }) => {
+        return {}
     };
 
     success = (user) => {
