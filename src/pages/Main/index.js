@@ -18,7 +18,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default class MainScreen extends React.Component {
 
-    locationId = 2;
+    locationId = 5;
 
     static navigationOptions = ({ navigation }) => {
         return {}
@@ -35,24 +35,6 @@ export default class MainScreen extends React.Component {
                     <TouchableOpacity onPress={this.details} style={{alignItems: 'center'}}>
                         <LocationPreview key={this.locationId} location={this.locationId} />
                     </TouchableOpacity>
-
-
-                    <View style={styles.moreItems}>
-                        <ScrollView horizontal>
-                            {/* Inside the next view theres a bunch of random shit just to test the scrollview */}
-                            <View style={{ flexDirection: "row" }}>
-                                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
-                                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
-                                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
-                                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
-                                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
-                                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
-                                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
-                                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
-                                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
-                            </View>
-                        </ScrollView>
-                    </View>
 
                     <LocationList onPressItem={(id) => this.locationId = id} />
 

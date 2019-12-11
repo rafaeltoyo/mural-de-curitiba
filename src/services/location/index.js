@@ -30,6 +30,8 @@ export default class LocationService {
         if (id == 1 || id == '1') return require('../../../assets/utfpr.jpg');
         if (id == 2 || id == '2') return require('../../../assets/Centro_Curitiba.jpg');
         if (id == 3 || id == '3') return require('../../../assets/logo.jpg');
+        if (id == 3 || id == '4') return require('../../../assets/Romani.png');
+        if (id == 3 || id == '5') return require('../../../assets/Museu.png');
         return require('../../../assets/icon.png');
     }
 }

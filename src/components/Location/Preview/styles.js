@@ -4,17 +4,18 @@ const { width  : WIDTH, height  : HEIGHT } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
     location_banner: {
-        width: 320,
-        height: 320,
+        width: 350,
+        height: 450,
         flexDirection: 'row',
         alignItems: "center",
         margin: 0,
         borderRadius: 30,
         overflow: "hidden",
-        shadowColor: "rgba(0, 0, 0, .7)",
-        shadowOffset: { height: 5, width: 0 },
+        shadowColor: "rgba(0, 0, 0, 1)",
+        shadowOffset: { height: 30, width: 0 },
         shadowOpacity: 1,
-        shadowRadius: 4,    
+        shadowRadius: 30,
+        elevation: 8
     },
     location_banner_image: {
         flex: 1,

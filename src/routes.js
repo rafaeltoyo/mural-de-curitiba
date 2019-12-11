@@ -37,14 +37,14 @@ const MainNavigator = createStackNavigator({
     },
 });
 
-AuthNavigator = createSwitchNavigator({
+const AuthNavigator = createSwitchNavigator({
     SignIn: LoginScreen,
     Home: MainNavigator
 });
 
 // Rota padrão para App final
-//const Routes = createAppContainer(AuthNavigator);
+const Routes = createAppContainer(AuthNavigator);
 // Debugar App sem login. 
-const Routes = createAppContainer(MainNavigator);
+//const Routes = createAppContainer(MainNavigator);
 
 export default Routes;

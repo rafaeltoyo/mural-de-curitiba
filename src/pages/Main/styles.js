@@ -6,7 +6,7 @@ const { height: HEIGHT } = Dimensions.get("window");
 export const styles = StyleSheet.create({
     backgroundContainer: {
         flex: 1,
-        paddingTop: 70,
+        paddingTop: 30,
         alignItems: "center",
         backgroundColor: "#fff",
         opacity: 0.8

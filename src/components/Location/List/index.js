@@ -32,8 +32,8 @@ export default class LocationList extends React.Component {
             const itemAction = () => this.props.onPressItem(idx);
 
             return (
-                <TouchableOpacity key={idx} onPress={itemAction} style={{flex:1, width: 100, height: 100}}>
-                    <Image source={img} style={{width: 100, height: 100}} />
+                <TouchableOpacity key={idx} onPress={itemAction} style={{flex:1, width: 130, height: 140}}>
+                    <Image source={img} style={{width: 130, height: 130, margin: 10, borderRadius: 30}} />
                     <Text>{bairro}</Text>
                 </TouchableOpacity>
             );
@@ -43,7 +43,6 @@ export default class LocationList extends React.Component {
     render() {
         return (
             <View>
-                <Icon style={{ padding: 10 }} name={'ios-image'} size={100} />
                 <ScrollView horizontal style={{width: 400, flexDirection: 'row'}}>
                     {this.renderData()}
                 </ScrollView>
